@@ -7,7 +7,8 @@ var Webpack = require('webpack');
 var mAlias = {
     components: Path.join(__dirname, '../src/components'),
     pages: Path.join(__dirname, '../src/pages'),
-    api: Path.join(__dirname, '../src/api')
+    api: Path.join(__dirname, '../src/api'),
+    router: Path.join(__dirname, '../src/router')
 };
 
 module.exports = {
@@ -16,7 +17,6 @@ module.exports = {
         vendor: [
             'vue',
             'vue-router',
-            'vue-strap',
             'vuex',
             'vue-resource'
         ]
@@ -46,11 +46,15 @@ module.exports = {
                 }
             },
             {
+                test: /\.css$/,
+                loader: ExtractTextWebpackPlugin.extract('style', 'css!postcss')
+            },
+            {
                 test: /\.less$/,
                 loader: ExtractTextWebpackPlugin.extract('style', 'css!postcss!less')
             },
             {
-                test: /\.(woff|woff2|ttf|eot)$/,
+                test: /\.(woff|woff2|ttf|eot|svg)$/,
                 loader: "url",
                 query: {
                     limit: 10000,
