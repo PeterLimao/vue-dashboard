@@ -21,7 +21,7 @@ Config.plugins = (Config.plugins || []).concat([
     new DashboardPlugin(dashboard.setData)
 ]);
 
-Config.devtool = '#eval-source-map';
+Config.devtool = 'cheap-source-map';
 
 var compiler = Webpack(Config);
 
