@@ -8,7 +8,8 @@ var mAlias = {
     components: Path.join(__dirname, '../src/components'),
     pages: Path.join(__dirname, '../src/pages'),
     api: Path.join(__dirname, '../src/api'),
-    router: Path.join(__dirname, '../src/router')
+    router: Path.join(__dirname, '../src/router'),
+    store: Path.join(__dirname, '../src/store')
 };
 
 module.exports = {

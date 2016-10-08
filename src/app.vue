@@ -27,10 +27,12 @@
     </div>
 </template>
 <script>
+    var Store = require('store');
     var NavBar = require('components/navBar');
     var Header = require('components/header');
 
     module.exports = {
+        store: Store,
         components: {
             'nav-bar': NavBar,
             'v-header': Header
