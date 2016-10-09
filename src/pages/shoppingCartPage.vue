@@ -1,5 +1,5 @@
 <template>
     <div id="shopping-cart-page">
-        shoppingCart
+        shoppingCartPage
     </div>
 </template>

@@ -3,5 +3,5 @@ export const subString = function(value, begin, end) {
 };
 
 export const testString = function() {
-    
+
 };

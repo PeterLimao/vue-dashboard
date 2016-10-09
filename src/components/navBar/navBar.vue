@@ -21,21 +21,20 @@
     <nav id="nav-bar">
         <div>
             <ul>
-                <li v-for="item in list" v-link="{ path: item }">
-                    <span>{{ item | subString 1 }}</span>
+                <li v-for="item in getPageList" v-link="{ path: item.url }">
+                    <span>{{ item.url | subString 1 }}</span>
                 </li>
             </ul>
         </div>
     </nav>
 </template>
 <script>
+    import { getPageList } from 'store/modules/global/getters';
+
     export default {
-        data () {
-            return {
-                list: [
-                    '/shoppingCart',
-                    '/regist'
-                ]
+        vuex: {
+            getters: {
+                getPageList
             }
         }
     };

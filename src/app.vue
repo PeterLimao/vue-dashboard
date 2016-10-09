@@ -43,7 +43,7 @@
     import Header from 'components/header';
 
     export default {
-        Store,
+        store: Store,
         components: {
             NavBar,
             'v-header': Header

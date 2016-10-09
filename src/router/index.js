@@ -15,9 +15,9 @@ router.map({
             require(['pages/shoppingCartPage'], resolve);
         }
     },
-    '/regist': {
+    '/todomvc': {
         component (resolve) {
-            require(['pages/registerPage'], resolve);
+            require(['pages/todomvcPage'], resolve);
         }
     }
 });

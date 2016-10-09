@@ -17,7 +17,18 @@
 <template>
     <header id="header">
         <span>
-            Vue-Demos
+            Vue-Demos pageCount: {{ getAllPageCount }}
         </span>
     </header>
 </template>
+<script>
+    import { getAllPageCount } from 'store/modules/global/getters';
+
+    export default {
+        vuex: {
+            getters: {
+                getAllPageCount
+            }
+        }
+    };
+</script>

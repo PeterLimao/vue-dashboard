@@ -9,8 +9,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     modules: {
-        Global,
-        ShoppingCart
+        global: Global
     },
     strict: process.env.NODE_ENV !== 'production',
     middlewares: [process.env.NODE_ENV === 'production'? '': CreateLogger]
