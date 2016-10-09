@@ -12,5 +12,6 @@ export default new Vuex.Store({
         Global,
         ShoppingCart
     },
+    strict: process.env.NODE_ENV !== 'production',
     middlewares: [process.env.NODE_ENV === 'production'? '': CreateLogger]
 });

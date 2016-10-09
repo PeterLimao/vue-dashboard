@@ -22,4 +22,6 @@ router.map({
     }
 });
 
-export const start = (component, tag) => router.start(component, tag);
+export const start = function(component, tag) {
+    router.start(component, tag);
+};

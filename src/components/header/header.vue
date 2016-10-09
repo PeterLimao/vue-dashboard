@@ -17,7 +17,7 @@
 <template>
     <header id="header">
         <span>
-            Demo
+            Vue-Demos
         </span>
     </header>
 </template>

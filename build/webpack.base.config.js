@@ -9,7 +9,8 @@ var mAlias = {
     pages: Path.join(__dirname, '../src/pages'),
     api: Path.join(__dirname, '../src/api'),
     router: Path.join(__dirname, '../src/router'),
-    store: Path.join(__dirname, '../src/store')
+    store: Path.join(__dirname, '../src/store'),
+    filter: Path.join(__dirname, '../src/filter')
 };
 
 module.exports = {
