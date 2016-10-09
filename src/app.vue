@@ -1,8 +1,17 @@
-<style lang="less" scoped>
+<style lang="less">
+    .wrapper {
+        padding: 1rem 4rem 4rem;
+    }
+
     .content {
         width: 100%;
         height: 100%;
         display: flex;
+        background: #ffffff;
+    }
+
+    body {
+        background: #f1f4f9;
     }
 
     .content-left {
@@ -16,25 +25,27 @@
 <template>
     <div id="app">
         <v-header></v-header>
-        <div class="content">
-            <div class="content-left">
-                <nav-bar></nav-bar>
-            </div>
-            <div class="content-right">
-                <router-view></router-view>
+        <div class="wrapper">
+            <div class="content">
+                <div class="content-left">
+                    <nav-bar></nav-bar>
+                </div>
+                <div class="content-right">
+                    <router-view></router-view>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-    var Store = require('store');
-    var NavBar = require('components/navBar');
-    var Header = require('components/header');
+    import Store from 'store';
+    import NavBar from 'components/navBar';
+    import Header from 'components/header';
 
-    module.exports = {
-        store: Store,
+    export default {
+        Store,
         components: {
-            'nav-bar': NavBar,
+            NavBar,
             'v-header': Header
         }
     };

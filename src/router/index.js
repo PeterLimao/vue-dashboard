@@ -1,31 +1,25 @@
-var VueRouter = require('vue-router');
-var Vue = require('vue');
+import VueRouter from 'vue-router';
+import Vue from 'vue';
 
 Vue.use(VueRouter);
-var router = new VueRouter();
+const router = new VueRouter();
 
 router.map({
     '*': {
-        component: function(resolve) {
-            require(['pages/loginPage'], resolve);
+        component (resolve) {
+            require(['pages/shoppingCartPage'], resolve);
         }
     },
-    '/login': {
-        component: function(resolve) {
-            require(['pages/loginPage'], resolve);
+    '/shoppingCart': {
+        component (resolve) {
+            require(['pages/shoppingCartPage'], resolve);
         }
     },
     '/regist': {
-        component: function(resolve) {
+        component (resolve) {
             require(['pages/registerPage'], resolve);
         }
     }
 });
 
-var start = function(component, tag) {
-    router.start(component, tag);
-};
-
-module.exports = {
-    start: start
-};
+export const start = (component, tag) => router.start(component, tag);

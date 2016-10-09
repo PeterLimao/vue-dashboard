@@ -1,16 +1,23 @@
+<style scoped>
+    #header {
+        display: flex;
+        height: 4rem;
+        width: 100%;
+        padding: 0 3rem;
+        background: #2db7f5;
+        align-items: center;
+    }
+
+    span {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: #ffffff;
+    }
+</style>
 <template>
     <header id="header">
-        <navbar placement="top" type="default">
-            <a class="navbar-brand">VueStrap</a>
-        </navbar>
+        <span>
+            Demo
+        </span>
     </header>
 </template>
-<script>
-    var NavBar = require('vue-strap').navbar;
-
-    module.exports = {
-        components: {
-            navbar: NavBar
-        }
-    };
-</script>

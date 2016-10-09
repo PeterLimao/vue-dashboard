@@ -1,16 +1,16 @@
-var Vuex = require('vuex');
-var Vue = require('vue');
+import Vuex from 'vuex';
+import Vue from 'vue';
+import CreateLogger from 'vuex/logger';
 
-var Global = require('./modules/global');
-var Cart = require('./modules/cart');
-var Produst = require('./modules/produst');
+import Global from './modules/global';
+import ShoppingCart from './modules/shoppingCart';
 
 Vue.use(Vuex);
 
-module.exports = new Vuex.Store({
+export default new Vuex.Store({
     modules: {
-        global: Global,
-        cart: Cart,
-        produst: Produst
-    }
+        Global,
+        ShoppingCart
+    },
+    middlewares: [process.env.NODE_ENV === 'production'? '': CreateLogger]
 });
