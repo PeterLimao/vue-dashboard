@@ -31,7 +31,7 @@
 <template>
     <header id="header">
         <span class="logo">
-            Vue-Demos
+            Peter-Demos
         </span>
         <div class="page-count">
             <span>count:</span>
@@ -40,13 +40,13 @@
     </header>
 </template>
 <script>
-    import { getAllPageCount } from 'store/modules/global/getters';
+    import { globalGetter } from 'store/getters';
     import { rdTag } from 'radon-ui';
 
     export default {
         vuex: {
             getters: {
-                getAllPageCount
+                getAllPageCount: globalGetter.getAllPageCount
             }
         },
         components: {

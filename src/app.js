@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import App from './app.vue';
+import vue from 'vue';
+import app from './app.vue';
 import { start } from 'router';
-import Filter from 'filter';
+import filter from 'filter';
 import 'radon-ui/dist/static/css/dist.css';
 
-Vue.config.debug = process.env.NODE_ENV === 'production' ? false : true;
+vue.config.debug = process.env.NODE_ENV === 'production' ? false : true;
 
-Object.keys(Filter).forEach((key) => {
-    Vue.filter(key, Filter[key]);
+Object.keys(filter).forEach((key) => {
+    vue.filter(key, filter[key]);
 });
 
-start(App, 'app');
+start(app, 'app');

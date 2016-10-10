@@ -38,15 +38,15 @@
     </div>
 </template>
 <script>
-    import Store from 'store';
-    import NavBar from 'components/navBar';
-    import Header from 'components/header';
+    import store from 'store';
+    import navBar from 'components/navBar';
+    import header from 'components/header';
 
     export default {
-        store: Store,
+        store,
         components: {
-            NavBar,
-            'v-header': Header
+            navBar,
+            'v-header': header
         }
     };
 </script>
