@@ -4,6 +4,7 @@ import CreateLogger from 'vuex/logger';
 
 import Global from './modules/global';
 import ShoppingCart from './modules/shoppingCart';
+import Todomvc from './modules/todomvc';
 
 Vue.use(Vuex);
 

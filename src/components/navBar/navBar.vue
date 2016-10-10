@@ -22,7 +22,7 @@
         <div>
             <ul>
                 <li v-for="item in getPageList" v-link="{ path: item.url }">
-                    <span>{{ item.url | subString 1 }}</span>
+                    <span>{{ item.name | toUpper }}</span>
                 </li>
             </ul>
         </div>

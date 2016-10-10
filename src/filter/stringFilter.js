@@ -1,5 +1,5 @@
-export const subString = function(value, begin, end) {
-    return value.substring(begin, end);
+export const toUpper = function(value) {
+    return value.toUpperCase();
 };
 
 export const testString = function() {
