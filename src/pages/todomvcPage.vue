@@ -22,6 +22,11 @@
         ready () {
             this.setTabActive(this.tabList, 'view');
         },
+        events: {
+            tabChange (tabName) {
+                this.$route.router.go('/todomvc/' + tabName);
+            }
+        },
         components: {
             tabs
         }

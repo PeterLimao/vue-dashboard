@@ -68,6 +68,7 @@
                 let targetDom = event.currentTarget;
                 this.changeIndicator(targetDom);
                 this.setTabActive(this.tabList, targetDom.getAttribute('name'));
+                this.$dispatch('tabChange', targetDom.getAttribute('name'));
             },
             changeIndicator (targetDom) {
                 this.indicatorStyle.left = targetDom.offsetLeft + 'px';
