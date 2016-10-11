@@ -1,7 +1,9 @@
 import VueRouter from 'vue-router';
 import Vue from 'vue';
+import commonSubRoutes from './commonSubRoutes';
 
 Vue.use(VueRouter);
+
 const router = new VueRouter();
 
 router.map({
@@ -13,12 +15,14 @@ router.map({
     '/shoppingCart': {
         component (resolve) {
             require(['pages/shoppingCartPage'], resolve);
-        }
+        },
+        subRoutes: commonSubRoutes
     },
     '/todomvc': {
         component (resolve) {
             require(['pages/todomvcPage'], resolve);
-        }
+        },
+        subRoutes: commonSubRoutes
     }
 });
 

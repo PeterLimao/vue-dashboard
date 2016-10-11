@@ -20,44 +20,66 @@
         cursor: pointer;
     }
 
+    .active {
+        color: #2db7f5;
+    }
+
     .tabs-indicator {
         background: #2db7f5;
         width: 100%;
         position: relative;
         height: 2px;
-        transition: all 0.2s ease;
+        transition: left 0.2s ease;
     }
 </style>
 <template>
     <div id="tabs">
         <ul class="tabs-items">
-            <li class="tabs-item" @click="changeIndicator($event)">
-                VIEW
-            </li>
-            <li class="tabs-item" @click="changeIndicator($event)">
-                DOC
+            <li class="tabs-item" v-for="item in tabList" @click="changeTab($event)" :class="{ active: item.isActive }" :name="item.value">
+                {{ item.value | toUpper}}
             </li>
         </ul>
         <div class="tabs-indicator" :style="indicatorStyle"></div>
     </div>
 </template>
 <script>
+    import { globalGetter } from 'store/getters';
+    import { globalAction } from 'store/actions';
+
     export default {
         data () {
             return {
                 indicatorStyle: {
                     width: '0px',
-                    left: '0'
+                    left: '0px'
                 }
             }
         },
         ready () {
-            let li = this.$el.querySelector('.tabs-item');
-            this.indicatorStyle.width = li.offsetWidth + 'px';
+            let tabs = this.$el.querySelectorAll('.tabs-item');
+            this.tabList.forEach((tabObject, index) => {
+                if (tabObject.isActive) {
+                    this.indicatorStyle.width = tabs[index].offsetWidth + 'px';
+                }
+            });
         },
         methods: {
-            changeIndicator (event) {
-                this.indicatorStyle.left = event.currentTarget.offsetLeft + 'px';
+            changeTab (event) {
+                let targetDom = event.currentTarget;
+                this.changeIndicator(targetDom);
+                this.setTabActive(this.tabList, targetDom.getAttribute('name'));
+            },
+            changeIndicator (targetDom) {
+                this.indicatorStyle.left = targetDom.offsetLeft + 'px';
+                this.indicatorStyle.width = targetDom.offsetWidth + 'px';
+            }
+        },
+        vuex: {
+            getters: {
+                tabList: globalGetter.getTabList
+            },
+            actions: {
+                setTabActive: globalAction.setTabActive
             }
         }
     };

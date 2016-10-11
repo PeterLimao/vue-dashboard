@@ -8,5 +8,15 @@ export default {
             name: 'todomvc',
             url: '/todomvc'
         }
+    ],
+    tabList: [
+        {
+            isActive: true,
+            value: 'view'
+        },
+        {
+            isActive: false,
+            value: 'doc'
+        }
     ]
 };

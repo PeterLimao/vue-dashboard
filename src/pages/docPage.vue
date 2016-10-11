@@ -1,0 +1,3 @@
+<template>
+    doc page
+</template>

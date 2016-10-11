@@ -1,7 +1,7 @@
-import State from './state';
-import Mutations from './mutations';
+import state from './state';
+import mutations from './mutations';
 
 export default {
-    state: State,
-    mutations: Mutations
+    state,
+    mutations
 };
