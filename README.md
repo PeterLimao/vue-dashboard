@@ -15,6 +15,18 @@
 
 ## 目录设计
 ![img](https://github.com/PeterLimao/vue-starter/raw/master/docs/images/src.png)
+### 说明
+---------------------------------
+- api:
+- components:
+- directive
+- filter
+- pages
+- router
+- store
+- app.html: 整个项目的页面模板,所有的dom元素都会挂载到此模板上
+- app.js: 整个项目的初始化文件, 负责初始化工作，如：router的初始化，plugin的初始化等
+- app.vue: 整个项目的根组件(SPA原则上只有一个root component)
 
 ## 如何搞起？
 ```bash
