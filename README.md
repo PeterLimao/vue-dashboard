@@ -16,7 +16,6 @@
 ## 目录设计
 ![img](https://github.com/PeterLimao/vue-starter/raw/master/docs/images/src.png)
 ### 说明
----------------------------------
 - api:
 - components:
 - directive
