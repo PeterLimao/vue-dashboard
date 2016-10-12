@@ -14,6 +14,7 @@
 - webpack@1.13.1
 
 ## 目录设计
+![img](https://github.com/PeterLimao/vue-starter/raw/master/docs/images/src.png)
 
 ## 如何搞起？
 ```bash
