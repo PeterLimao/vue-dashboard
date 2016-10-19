@@ -4,33 +4,31 @@ import commonSubRoutes from './commonSubRoutes';
 
 Vue.use(VueRouter);
 
-const router = new VueRouter();
-
-router.map({
-    '*': {
+const routes = [
+    {
+        path: '*',
         component (resolve) {
             require(['pages/shoppingCartPage'], resolve);
         }
     },
-    '/shoppingCart': {
+    {
+        path: '/shoppingCart',
         component (resolve) {
             require(['pages/shoppingCartPage'], resolve);
         },
-        subRoutes: commonSubRoutes
+        children: commonSubRoutes
     },
-    '/todomvc': {
+    {
+        path: '/todomvc',
         component (resolve) {
             require(['pages/todomvcPage'], resolve);
         },
-        subRoutes: commonSubRoutes
+        children: commonSubRoutes
     }
+];
+
+const router = new VueRouter({
+    routes
 });
 
-const start = function(component, tag) {
-    router.start(component, tag);
-};
-
-export {
-    start,
-    router
-};
+export default router;

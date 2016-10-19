@@ -1,3 +1,5 @@
 <template>
-    doc page
+    <div>
+        docPage
+    </div>
 </template>

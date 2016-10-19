@@ -23,7 +23,7 @@
     }
 </style>
 <template>
-    <div id="app">
+    <div>
         <v-header></v-header>
         <div class="wrapper">
             <div class="content">
@@ -38,15 +38,13 @@
     </div>
 </template>
 <script>
-    import store from 'store';
-    import navBar from 'components/navBar';
-    import header from 'components/header';
+    import NavBar from 'components/navBar';
+    import Header from 'components/header';
 
     export default {
-        store,
         components: {
-            navBar,
-            'v-header': header
+            NavBar,
+            'v-header': Header
         }
     };
 </script>

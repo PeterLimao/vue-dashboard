@@ -1,3 +1,5 @@
 <template>
-    view page
+    <div>
+        view page
+    </div>
 </template>

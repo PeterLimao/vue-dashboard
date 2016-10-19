@@ -35,22 +35,17 @@
         </span>
         <div class="page-count">
             <span>count:</span>
-            <rd-tag :value="getAllPageCount.toString()"></rd-tag>
         </div>
     </header>
 </template>
 <script>
     import { globalGetter } from 'store/getters';
-    import { rdTag } from 'radon-ui';
 
     export default {
         vuex: {
             getters: {
                 getAllPageCount: globalGetter.getAllPageCount
             }
-        },
-        components: {
-            rdTag
         }
     };
 </script>

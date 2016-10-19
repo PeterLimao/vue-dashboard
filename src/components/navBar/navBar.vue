@@ -21,8 +21,10 @@
     <nav id="nav-bar">
         <div>
             <ul>
-                <li v-for="item in getPageList" v-link="{ path: item.url }">
-                    <span>{{ item.name | toUpper }}</span>
+                <li v-for="item in getPageList">
+                    <router-link :to="item.url">
+                        <span>{{ item.name | toUpper }}</span>
+                    </router-link>
                 </li>
             </ul>
         </div>

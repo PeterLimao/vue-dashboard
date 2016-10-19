@@ -65,6 +65,7 @@
         },
         methods: {
             changeTab (event) {
+                debugger;
                 let targetDom = event.currentTarget;
                 this.changeIndicator(targetDom);
                 this.setTabActive(this.tabList, targetDom.getAttribute('name'));

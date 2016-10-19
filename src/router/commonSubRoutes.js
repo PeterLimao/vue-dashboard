@@ -1,17 +1,20 @@
-export default {
-    '/': {
+export default [
+    {
+        path: '/',
         component (resolve) {
             require(['pages/viewPage'], resolve);
         }
     },
-    '/doc': {
+    {
+        path: '/doc',
         component (resolve) {
             require(['pages/docPage'], resolve);
         }
     },
-    '/view': {
+    {
+        path: '/view',
         component (resolve) {
             require(['pages/viewPage'], resolve);
         }
     }
-};
+];
