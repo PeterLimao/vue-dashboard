@@ -34,7 +34,7 @@
             Peter-Demos
         </span>
         <div class="page-count">
-            <span>count:</span>
+            <span>count: {{ getAllPageCount }}</span>
         </div>
     </header>
 </template>

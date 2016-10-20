@@ -2,7 +2,7 @@ export default {
     pageList: [
         {
             name: 'shoppingCart',
-            url: '/shoppingCart'
+            url: '/shoppingcart'
         },
         {
             name: 'todomvc',

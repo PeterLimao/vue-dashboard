@@ -55,8 +55,8 @@
                 }
             }
         },
-        ready () {
-            let tabs = this.$el.querySelectorAll('.tabs-item');
+        mounted () {
+            const tabs = this.$el.querySelectorAll('.tabs-item');
             this.tabList.forEach((tabObject, index) => {
                 if (tabObject.isActive) {
                     this.indicatorStyle.width = tabs[index].offsetWidth + 'px';
@@ -65,11 +65,10 @@
         },
         methods: {
             changeTab (event) {
-                debugger;
-                let targetDom = event.currentTarget;
+                const targetDom = event.currentTarget;
                 this.changeIndicator(targetDom);
                 this.setTabActive(this.tabList, targetDom.getAttribute('name'));
-                this.$dispatch('tabChange', targetDom.getAttribute('name'));
+                this.$emit('tabChange', targetDom.getAttribute('name'));
             },
             changeIndicator (targetDom) {
                 this.indicatorStyle.left = targetDom.offsetLeft + 'px';

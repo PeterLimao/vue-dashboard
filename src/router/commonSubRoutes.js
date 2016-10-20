@@ -6,13 +6,13 @@ export default [
         }
     },
     {
-        path: '/doc',
+        path: 'doc',
         component (resolve) {
             require(['pages/docPage'], resolve);
         }
     },
     {
-        path: '/view',
+        path: 'view',
         component (resolve) {
             require(['pages/viewPage'], resolve);
         }

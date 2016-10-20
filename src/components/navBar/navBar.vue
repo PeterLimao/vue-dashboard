@@ -7,7 +7,7 @@
         padding-right: 20px;
     }
 
-    li {
+    .links {
         padding: 1rem 2rem;
         font-size: 0.8rem;
         cursor: pointer;
@@ -23,7 +23,7 @@
             <ul>
                 <li v-for="item in getPageList">
                     <router-link :to="item.url">
-                        <span>{{ item.name | toUpper }}</span>
+                        <div class="links">{{ item.name | toUpper }}</span>
                     </router-link>
                 </li>
             </ul>

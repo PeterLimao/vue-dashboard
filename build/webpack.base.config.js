@@ -57,7 +57,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|ttf|eot|svg)$/,
-                loader: "url",
+                loader: 'url',
                 query: {
                     limit: 10000,
                     name: '../font/[name].[hash:7].[ext]'

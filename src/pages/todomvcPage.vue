@@ -24,7 +24,7 @@
         },
         events: {
             tabChange (tabName) {
-                this.$route.router.go('/todomvc/' + tabName);
+                this.$route.router.push('/todomvc/' + tabName);
             }
         },
         components: {

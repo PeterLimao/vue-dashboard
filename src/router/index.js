@@ -1,29 +1,30 @@
 import VueRouter from 'vue-router';
 import Vue from 'vue';
-import commonSubRoutes from './commonSubRoutes';
+import CommonSubRoutes from './commonSubRoutes';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '*',
+        path: '/',
         component (resolve) {
-            require(['pages/shoppingCartPage'], resolve);
-        }
+            require(['pages/shoppingCartPage'], resolve)
+        },
+        children: CommonSubRoutes
     },
     {
-        path: '/shoppingCart',
+        path: '/shoppingcart',
         component (resolve) {
             require(['pages/shoppingCartPage'], resolve);
         },
-        children: commonSubRoutes
+        children: CommonSubRoutes
     },
     {
         path: '/todomvc',
         component (resolve) {
             require(['pages/todomvcPage'], resolve);
         },
-        children: commonSubRoutes
+        children: CommonSubRoutes
     }
 ];
 

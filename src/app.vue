@@ -7,7 +7,6 @@
         width: 100%;
         height: 100%;
         display: flex;
-        background: #ffffff;
     }
 
     body {
@@ -16,10 +15,12 @@
 
     .content-left {
         width: 20%;
+        background: #ffffff;
     }
 
     .content-right {
         width: 80%;
+        background: #ffffff;
     }
 </style>
 <template>

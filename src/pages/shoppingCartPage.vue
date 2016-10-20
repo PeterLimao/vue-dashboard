@@ -1,12 +1,13 @@
 <template>
     <div id="shopping-cart-page">
-        <tabs></tabs>
+        <tabs @tabChange="tabChange"></tabs>
         shoppingCartPage
         <router-view></router-view>
     </div>
 </template>
 <script>
-    import tabs from 'components/tabs';
+    import Tabs from 'components/tabs';
+    import Router from 'router';
     import { globalAction } from 'store/actions';
     import { globalGetter } from 'store/getters';
 
@@ -19,16 +20,16 @@
                 setTabActive: globalAction.setTabActive
             }
         },
-        ready () {
+        mounted () {
             this.setTabActive(this.tabList, 'view');
         },
-        events: {
+        methods: {
             tabChange (tabName) {
-                this.$route.router.go('/shoppingCart/' + tabName);
+                Router.push('/shoppingcart/' + tabName);
             }
         },
         components: {
-            tabs
+            Tabs
         }
     };
 </script>
