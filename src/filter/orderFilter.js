@@ -1,3 +1,2 @@
-export const testOrder = function() {
-    
+export const testOrder = function () {
 };

@@ -1,17 +1,17 @@
-import vuex from 'vuex';
-import vue from 'vue';
-import createLogger from 'vuex/logger';
+import Vuex from 'vuex';
+import Vue from 'vue';
 
-import global from './modules/global';
-import shoppingCart from './modules/shoppingCart';
-import todomvc from './modules/todomvc';
+import Global from './modules/global';
+import ShoppingCart from './modules/shoppingCart';
+import Todomvc from './modules/todomvc';
 
-vue.use(vuex);
+Vue.use(Vuex);
 
-export default new vuex.Store({
+export default new Vuex.Store({
     modules: {
-        global
+        global: Global,
+        shoppingCart: ShoppingCart,
+        todomvc: Todomvc
     },
-    strict: process.env.NODE_ENV !== 'production',
-    middlewares: [process.env.NODE_ENV === 'production'? '': createLogger]
+    strict: process.env.NODE_ENV !== 'production'
 });

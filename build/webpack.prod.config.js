@@ -4,12 +4,12 @@ var Config = require('./webpack.base.config');
 var ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 require('shelljs/global');
 
-var createDirCmd = function() {
+var createDirCmd = function () {
     mkdir('font');
     mkdir('img');
 };
 
-var mvDirCmd = function() {
+var mvDirCmd = function () {
     cp('-R', './font', './dist');
     cp('-R', './img', './dist');
     rm('-rf', './font');
@@ -37,11 +37,11 @@ Config.plugins = (Config.plugins || []).concat([
 
 var compiler = Webpack(Config);
 
-compiler.apply(new ProgressPlugin(function(percentage, msg) {
+compiler.apply(new ProgressPlugin(function (percentage, msg) {
     console.log((percentage * 100) + '%', msg);
 }));
 
-compiler.run(function(err, stats) {
+compiler.run(function (err, stats) {
     if (err) throw err;
     process.stdout.write(stats.toString({
         colors: true,

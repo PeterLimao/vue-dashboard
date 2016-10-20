@@ -1,9 +1,9 @@
-import * as globalMutationType from './globalMutationType';
-import * as shoppingCartMutationType from './shoppingCartMutationType';
-import * as todomvcMutationType from './todomvcMutationType';
+import * as GlobalMutationType from './globalMutationType';
+import * as ShoppingCartMutationType from './shoppingCartMutationType';
+import * as TodomvcMutationType from './todomvcMutationType';
 
 export {
-    globalMutationType,
-    shoppingCartMutationType,
-    todomvcMutationType
+    GlobalMutationType as globalMutationType,
+    ShoppingCartMutationType as shoppingCartMutationType,
+    TodomvcMutationType as todomvcMutationType
 };

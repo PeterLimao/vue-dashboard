@@ -1,17 +1,13 @@
-import vue from 'vue';
-import app from './app.vue';
-import { start, router } from 'router';
-import store from 'store';
-import filter from 'filter';
-import { sync } from 'vuex-router-sync';
+import Vue from 'vue';
+import App from './app.vue';
+import { start } from 'router';
+import Filter from 'filter';
 import 'radon-ui/dist/static/css/dist.css';
 
-vue.config.debug = process.env.NODE_ENV === 'production' ? false : true;
+Vue.config.debug = process.env.NODE_ENV === 'production';
 
-sync(store, router);
-
-Object.keys(filter).forEach((key) => {
-    vue.filter(key, filter[key]);
+Object.keys(Filter).forEach((key) => {
+    Vue.filter(key, Filter[key]);
 });
 
-start(app, 'app');
+start(App, 'app');

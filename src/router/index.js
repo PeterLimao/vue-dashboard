@@ -26,7 +26,7 @@ router.map({
     }
 });
 
-const start = function(component, tag) {
+const start = function (component, tag) {
     router.start(component, tag);
 };
 

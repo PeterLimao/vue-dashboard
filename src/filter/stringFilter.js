@@ -1,7 +1,7 @@
-export const toUpper = function(value) {
+export const toUpper = function (value) {
     return value.toUpperCase();
 };
 
-export const testString = function() {
+export const testString = function () {
 
 };

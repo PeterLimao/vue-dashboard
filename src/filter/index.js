@@ -1,7 +1,8 @@
 import * as StringFilter from './stringFilter';
 import * as OrderFilter from './orderFilter';
 
-export default {
-    ...StringFilter,
-    ...OrderFilter
-}
+const out = {};
+
+Object.assign(out, StringFilter, OrderFilter);
+
+export default out;

@@ -32,11 +32,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.vue$/,
-                loader: 'vue'
+                loader: 'vue!eslint'
             },
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel!eslint',
                 exclude: /node_modules/
             },
             {
@@ -57,7 +57,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|ttf|eot|svg)$/,
-                loader: "url",
+                loader: 'url',
                 query: {
                     limit: 10000,
                     name: '../font/[name].[hash:7].[ext]'
@@ -69,7 +69,7 @@ module.exports = {
         extensions: ['', '.js', '.vue', '.css', '.jpg', '.less'],
         alias: mAlias
     },
-    postcss: function() {
+    postcss: function () {
         return [autoprefixer];
     },
     vue: {

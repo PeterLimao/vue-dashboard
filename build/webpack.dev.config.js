@@ -6,10 +6,10 @@ var Dashboard = require('webpack-dashboard');
 var DashboardPlugin = require('webpack-dashboard/plugin');
 var dashboard = new Dashboard();
 
-Config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
+Config.entry.app.unshift('webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server');
 Config.output.filename = '[name].[hash:7].js';
 Config.output.chunkFilename = '[name].[hash:7].js';
-Config.module.loaders.forEach(function(loader) {
+Config.module.loaders.forEach(function (loader) {
     if (loader.loader === 'url') {
         loader.query.name = '[name].[hash:7].[ext]';
     }
@@ -33,7 +33,7 @@ var server = new WebpackDevServer(compiler, {
     quiet: true
 });
 
-server.listen(8080, function(err) {
+server.listen(8080, function (err) {
     if (err) {
         console.log(err);
     }
