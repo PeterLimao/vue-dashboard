@@ -1,11 +1,16 @@
-import { globalMutationType } from 'store/mutationTypes';
+import * as Types from 'store/mutation-types';
 
-export const setTabActive = function({ dispatch }, tabList, value) {
-    tabList.forEach((tab, index) => {
-        dispatch(globalMutationType['SET_TAB_ACTIVE'], index, false);
-
+export const setTabActive = function ({ commit }, { tablist, value }) {
+    tablist.forEach((tab, index) => {
+        commit(Types['SET_TAB_ACTIVE'], {
+            index,
+            isActive: false
+        });
         if (tab.value === value) {
-            dispatch(globalMutationType['SET_TAB_ACTIVE'], index, true);
+            commit(Types['SET_TAB_ACTIVE'], {
+                index,
+                isActive: true
+            });
         }
     });
 };

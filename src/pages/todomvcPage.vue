@@ -1,34 +1,36 @@
 <template>
     <div id="todomvc-page">
-        <tabs></tabs>
+        <tabs @tabChange="tabChange"></tabs>
         todomvc page
         <router-view></router-view>
     </div>
 </template>
 <script>
-    import tabs from 'components/tabs';
-    import { globalAction } from 'store/actions';
-    import { globalGetter } from 'store/getters';
+    import Tabs from 'components/tabs';
+    import Router from 'router';
 
     export default {
-        vuex: {
-            getters: {
-                tabList: globalGetter.getTabList
-            },
-            actions: {
-                setTabActive: globalAction.setTabActive
+        computed: {
+            getTabList () {
+                return this.$store.getters.getTabList;
             }
         },
-        ready () {
-            this.setTabActive(this.tabList, 'view');
+        mounted () {
+            this.setTabActive(this.getTabList, 'view');
         },
-        events: {
+        methods: {
             tabChange (tabName) {
-                this.$route.router.push('/todomvc/' + tabName);
+                Router.push('/todomvc/' + tabName);
+            },
+            setTabActive (tablist, value) {
+                this.$store.dispatch('setTabActive', {
+                    tablist,
+                    value
+                });
             }
         },
         components: {
-            tabs
+            Tabs
         }
     };
 </script>

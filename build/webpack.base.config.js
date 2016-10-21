@@ -32,11 +32,11 @@ module.exports = {
         loaders: [
             {
                 test: /\.vue$/,
-                loader: 'vue'
+                loader: 'vue!eslint'
             },
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel!eslint',
                 exclude: /node_modules/
             },
             {
@@ -69,7 +69,7 @@ module.exports = {
         extensions: ['', '.js', '.vue', '.css', '.jpg', '.less'],
         alias: mAlias
     },
-    postcss: function() {
+    postcss: function () {
         return [autoprefixer];
     },
     vue: {

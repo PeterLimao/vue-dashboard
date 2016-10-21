@@ -39,12 +39,10 @@
     </header>
 </template>
 <script>
-    import { globalGetter } from 'store/getters';
-
     export default {
-        vuex: {
-            getters: {
-                getAllPageCount: globalGetter.getAllPageCount
+        computed: {
+            getAllPageCount () {
+                return this.$store.getters.getAllPageCount;
             }
         }
     };

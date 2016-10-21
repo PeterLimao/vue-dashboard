@@ -31,12 +31,10 @@
     </nav>
 </template>
 <script>
-    import { globalGetter } from 'store/getters';
-
     export default {
-        vuex: {
-            getters: {
-                getPageList: globalGetter.getPageList
+        computed: {
+            getPageList () {
+                return this.$store.getters.getPageList;
             }
         }
     };

@@ -1,9 +1,10 @@
-import * as globalGetter from './globalGetter';
-import * as todomvcGetter from './todomvcGetter';
-import * as shoppingCartGetter from './shoppingCartGetter';
+import * as GlobalGetter from './globalGetter';
+import * as TodomvcGetter from './todomvcGetter';
+import * as ShoppingCartGetter from './shoppingCartGetter';
 
-export {
-    globalGetter,
-    todomvcGetter,
-    shoppingCartGetter
-};
+const getters = {};
+
+Object.assign(getters, GlobalGetter, TodomvcGetter, ShoppingCartGetter);
+
+export default getters;
+

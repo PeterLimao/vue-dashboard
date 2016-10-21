@@ -35,7 +35,7 @@
 <template>
     <div id="tabs">
         <ul class="tabs-items">
-            <li class="tabs-item" v-for="item in tabList" @click="changeTab($event)" :class="{ active: item.isActive }" :name="item.value">
+            <li class="tabs-item" v-for="item in getTabList" @click="changeTab($event)" :class="{ active: item.isActive }" :name="item.value">
                 {{ item.value | toUpper}}
             </li>
         </ul>
@@ -43,9 +43,6 @@
     </div>
 </template>
 <script>
-    import { globalGetter } from 'store/getters';
-    import { globalAction } from 'store/actions';
-
     export default {
         data () {
             return {
@@ -53,11 +50,11 @@
                     width: '0px',
                     left: '0px'
                 }
-            }
+            };
         },
         mounted () {
             const tabs = this.$el.querySelectorAll('.tabs-item');
-            this.tabList.forEach((tabObject, index) => {
+            this.getTabList.forEach((tabObject, index) => {
                 if (tabObject.isActive) {
                     this.indicatorStyle.width = tabs[index].offsetWidth + 'px';
                 }
@@ -67,20 +64,23 @@
             changeTab (event) {
                 const targetDom = event.currentTarget;
                 this.changeIndicator(targetDom);
-                this.setTabActive(this.tabList, targetDom.getAttribute('name'));
+                this.setTabActive(this.getTabList, targetDom.getAttribute('name'));
                 this.$emit('tabChange', targetDom.getAttribute('name'));
             },
             changeIndicator (targetDom) {
                 this.indicatorStyle.left = targetDom.offsetLeft + 'px';
                 this.indicatorStyle.width = targetDom.offsetWidth + 'px';
+            },
+            setTabActive (tablist, value) {
+                this.$store.dispatch('setTabActive', {
+                    tablist,
+                    value
+                });
             }
         },
-        vuex: {
-            getters: {
-                tabList: globalGetter.getTabList
-            },
-            actions: {
-                setTabActive: globalAction.setTabActive
+        computed: {
+            getTabList () {
+                return this.$store.getters.getTabList;
             }
         }
     };

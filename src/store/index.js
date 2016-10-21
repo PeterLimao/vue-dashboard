@@ -1,15 +1,16 @@
-import vuex from 'vuex';
-import vue from 'vue';
+import Vuex from 'vuex';
+import Vue from 'vue';
+import Global from './modules/global';
+import Getters from './getters';
+import Actions from './actions';
 
-import global from './modules/global';
-import shoppingCart from './modules/shoppingCart';
-import todomvc from './modules/todomvc';
+Vue.use(Vuex);
 
-vue.use(vuex);
-
-export default new vuex.Store({
+export default new Vuex.Store({
     modules: {
-        global
+        global: Global
     },
+    getters: Getters,
+    actions: Actions,
     strict: process.env.NODE_ENV !== 'production'
 });

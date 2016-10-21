@@ -1,7 +1,7 @@
-import { globalMutationType } from 'store/mutationTypes';
+import * as Types from 'store/mutation-types';
 
 export default {
-    [globalMutationType['SET_TAB_ACTIVE']] (state, index, isActive) {
-        state.tabList[index].isActive = isActive;
+    [Types['SET_TAB_ACTIVE']] (state, payload) {
+        state.tabList[payload.index].isActive = payload.isActive;
     }
 };

@@ -8,7 +8,7 @@ const routes = [
     {
         path: '/',
         component (resolve) {
-            require(['pages/shoppingCartPage'], resolve)
+            require(['pages/shoppingCartPage'], resolve);
         },
         children: CommonSubRoutes
     },

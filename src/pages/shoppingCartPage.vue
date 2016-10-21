@@ -8,24 +8,25 @@
 <script>
     import Tabs from 'components/tabs';
     import Router from 'router';
-    import { globalAction } from 'store/actions';
-    import { globalGetter } from 'store/getters';
 
     export default {
-        vuex: {
-            getters: {
-                tabList: globalGetter.getTabList
-            },
-            actions: {
-                setTabActive: globalAction.setTabActive
+        computed: {
+            getTabList () {
+                return this.$store.getters.getTabList;
             }
         },
         mounted () {
-            this.setTabActive(this.tabList, 'view');
+            this.setTabActive(this.getTabList, 'view');
         },
         methods: {
             tabChange (tabName) {
                 Router.push('/shoppingcart/' + tabName);
+            },
+            setTabActive (tablist, value) {
+                this.$store.dispatch('setTabActive', {
+                    tablist,
+                    value
+                });
             }
         },
         components: {
