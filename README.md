@@ -15,6 +15,7 @@
 
 ## 目录设计
 ![img](https://github.com/PeterLimao/vue-starter/raw/master/docs/images/src.png)
+
 ### 说明
 - api: 用于封装网络请求,通过index.js文件暴露对外的接口,通过config.js来配置url,可根据需求进行扩展
 - components: 封装组件,通过index.js文件暴露出组件供外部使用,assets存在这个组件依赖的静态资源,如: fonts, styles等
@@ -26,6 +27,8 @@
 - app.html: 整个项目的页面模板,所有的dom元素都会挂载到此模板上
 - app.js: 整个项目的初始化文件, 负责初始化工作，如：router的初始化，plugin的初始化等
 - app.vue: 整个项目的根组件(SPA原则上只有一个root component)
+
+## Store设计
 
 ## 如何搞起？
 ```bash
