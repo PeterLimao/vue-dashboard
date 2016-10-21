@@ -6,11 +6,13 @@ import Actions from './actions';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-    modules: {
-        global: Global
-    },
+const store = new Vuex.Store({
     getters: Getters,
     actions: Actions,
     strict: process.env.NODE_ENV !== 'production'
 });
+
+store.registerModule('global', Global);
+
+export default store;
+
